@@ -137,9 +137,9 @@ const CustomCursor = () => {
 
   const cursorSpring = {
     type: "spring" as const,
-    damping: 30,
-    stiffness: 250,
-    mass: 0.5
+    damping: 50,
+    stiffness: 1000,
+    mass: 0.1
   };
 
   return (
@@ -152,7 +152,7 @@ const CustomCursor = () => {
           scale: isHovering ? 2 : 1,
           borderColor: isHovering ? "rgba(129, 236, 255, 0.8)" : "rgba(129, 236, 255, 0.3)",
         }}
-        transition={cursorSpring}
+        transition={{ duration: 0 }}
       />
       <motion.div
         className="fixed top-0 left-0 w-1.5 h-1.5 bg-primary rounded-full pointer-events-none z-[1000] shadow-[0_0_10px_#81ecff]"
@@ -161,7 +161,7 @@ const CustomCursor = () => {
           y: mousePos.y - 3,
           scale: isHovering ? 3 : 1,
         }}
-        transition={{ type: "spring", damping: 50, stiffness: 400, mass: 0.2 }}
+        transition={{ duration: 0 }}
       />
       <motion.div
         className="fixed top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none z-[-1]"
