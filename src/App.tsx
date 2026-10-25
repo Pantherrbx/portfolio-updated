@@ -8,18 +8,18 @@ import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'mot
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Sphere, MeshDistortMaterial, PerspectiveCamera, Points, PointMaterial, TorusKnot, Environment, ContactShadows } from '@react-three/drei';
 import * as THREE from 'three';
-import { 
-  Terminal, 
-  Database, 
-  Cloud, 
-  Download, 
-  ArrowRight, 
-  Settings, 
-  Activity, 
-  Github, 
-  Linkedin, 
-  Twitter, 
-  Mail, 
+import {
+  Terminal,
+  Database,
+  Cloud,
+  Download,
+  ArrowRight,
+  Settings,
+  Activity,
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
   ExternalLink,
   Cpu,
   Brain,
@@ -67,7 +67,7 @@ const ParticleBackground = () => {
 
 const AbstractModel = () => {
   const meshRef = useRef<THREE.Mesh>(null);
-  
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
@@ -117,7 +117,7 @@ const CustomCursor = () => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
-    
+
     const handleMouseHover = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.closest('a, button, .glow-hover')) {
@@ -314,9 +314,8 @@ const Navbar = () => {
               key={item}
               href={`#${item}`}
               onClick={() => setActive(item)}
-              className={`transition-all duration-300 relative py-1 ${
-                active === item ? 'text-primary' : 'text-zinc-500 hover:text-primary/70'
-              }`}
+              className={`transition-all duration-300 relative py-1 ${active === item ? 'text-primary' : 'text-zinc-500 hover:text-primary/70'
+                }`}
             >
               {item}
               {active === item && (
@@ -383,7 +382,7 @@ const GalaxyBackground = () => {
 
 const DiagnosticsCard = () => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ rotate: 3, opacity: 0, y: 20 }}
       whileInView={{ rotate: 1, opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -444,16 +443,16 @@ export default function App() {
     <div className="selection-primary scroll-smooth min-h-screen bg-black cursor-none">
       <CustomCursor />
       <Navbar />
-      
+
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface-container-lowest">
         <SpaceScene />
-        
+
         {/* Ambient Glow */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid md:grid-cols-2 gap-16 items-center z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             className="space-y-10"
@@ -492,7 +491,7 @@ export default function App() {
                 </span>
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
               </a>
-              
+
               <a
                 href="/resume.pdf"
                 download="Shivam_Kumar_Resume.pdf"
@@ -540,7 +539,7 @@ export default function App() {
                 <span className="font-headline text-[10px] tracking-[0.2em] uppercase text-zinc-400">BIO_MANIFEST</span>
               </div>
               <h2 className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-white">
-                ENGINEERING <br/>
+                ENGINEERING <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">SOLUTIONS.</span>
               </h2>
             </div>
@@ -553,7 +552,7 @@ export default function App() {
                     <span className="font-headline text-xs tracking-widest text-primary uppercase font-black">About Me</span>
                   </div>
                   <p className="font-sans text-xl md:text-2xl text-on-surface-variant/90 leading-relaxed font-light">
-                    B.Tech Student passionate about <span className="text-white font-bold">AI, ML, SQL, Java.</span> 
+                    B.Tech Student passionate about <span className="text-white font-bold">AI, ML, SQL, Java.</span>
                     I focus on translating complex data patterns into elegant, high-impact intelligent systems.
                   </p>
                   <div className="pt-8 grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -641,8 +640,8 @@ export default function App() {
                 <div className={`relative overflow-hidden ${i === 4 ? 'flex flex-col md:flex-row' : 'block'}`}>
                   {/* Image area */}
                   <div className={`relative overflow-hidden ${i === 4 ? 'md:w-1/3 aspect-square' : 'aspect-video'}`}>
-                    <img 
-                      src={project.image} 
+                    <img
+                      src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover opacity-40 group-hover:opacity-70 transition-all duration-1000 group-hover:scale-105"
                       referrerPolicy="no-referrer"
@@ -695,14 +694,14 @@ export default function App() {
           </div>
 
           {/* Large Visual Anchor */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="mt-32 relative h-[500px] w-full rounded-2xl overflow-hidden border border-white/5 group"
           >
-            <img 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKDWpliGZXZWBhtwPHqqmS6EsuyKC0JuaiFWEal1yYld4WOOP9IJqn5VlgAkUuNKhKJNR6up_80OpcZd_FrdENb5eyGdRdUcMm2EG3vg9zVGJsJhFBS4He0uidJhszM63E056Es4d7CMPCjCx0XTdWxyOZNMxfZ9FGii_kg117fP_OcC5g-3zmHvJ16Ne4_ze-prP9TzrTcmSC0rttEs9p2vGr6I44hK0KH9ga94wxScHDItHZd_O6XuAWmm5ZvCWW2GQAfO6xdxuh" 
-              alt="Quantum visualization" 
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKDWpliGZXZWBhtwPHqqmS6EsuyKC0JuaiFWEal1yYld4WOOP9IJqn5VlgAkUuNKhKJNR6up_80OpcZd_FrdENb5eyGdRdUcMm2EG3vg9zVGJsJhFBS4He0uidJhszM63E056Es4d7CMPCjCx0XTdWxyOZNMxfZ9FGii_kg117fP_OcC5g-3zmHvJ16Ne4_ze-prP9TzrTcmSC0rttEs9p2vGr6I44hK0KH9ga94wxScHDItHZd_O6XuAWmm5ZvCWW2GQAfO6xdxuh"
+              alt="Quantum visualization"
               className="w-full h-full object-cover transition-transform duration-[4000ms] group-hover:scale-110 opacity-70"
               referrerPolicy="no-referrer"
             />
@@ -733,20 +732,20 @@ export default function App() {
               EVOLUTION <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">OF INTELLECT.</span>
             </h2>
             <p className="text-on-surface-variant text-xl max-w-2xl font-light leading-relaxed">
-              A technical trajectory through language acquisition, data systems, and autonomous intelligence engineering. 
+              A technical trajectory through language acquisition, data systems, and autonomous intelligence engineering.
             </p>
           </div>
 
           <div className="relative">
             {/* Center line */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1.5px] bg-gradient-to-b from-primary/50 via-secondary/50 to-transparent md:-translate-x-1/2 opacity-20" />
-            
+
             <div className="space-y-32">
               {EXPERIENCE.map((exp, i) => (
                 <div key={i} className={`relative flex flex-col md:flex-row items-center gap-12 group ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                   {/* Dot */}
                   <div className="absolute left-0 md:left-1/2 top-0 md:top-8 w-4 h-4 rounded-full bg-surface border-2 border-primary -translate-x-1.5 md:-translate-x-2 z-10 shadow-[0_0_10px_#81ecff]" />
-                  
+
                   {/* Content */}
                   <div className={`w-full md:w-1/2 pl-10 md:pl-0 ${i % 2 === 0 ? 'md:pl-20' : 'md:pr-20 md:text-right'}`}>
                     <motion.div
@@ -793,58 +792,94 @@ export default function App() {
                     System ready for collaboration. Available for architecture consulting and high-impact AI ventures.
                   </p>
                 </div>
-                
+
                 <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                   <div className="space-y-6">
                     <div className="relative group">
                       <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-3">Identifier_Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         placeholder="GUEST_USER"
                         className="w-full bg-transparent border-b border-white/10 focus:border-primary focus:ring-0 text-white placeholder-zinc-800 transition-all py-4 font-headline text-lg"
                       />
                     </div>
                     <div className="relative group">
                       <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-3">Electronic_Mail</label>
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         placeholder="USER@DOMAIN.COM"
                         className="w-full bg-transparent border-b border-white/10 focus:border-primary focus:ring-0 text-white placeholder-zinc-800 transition-all py-4 font-headline text-lg"
                       />
                     </div>
                   </div>
                   <button className="w-full bg-primary text-black py-5 font-headline font-black tracking-[0.3em] text-xs hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-4 rounded-xl shadow-[0_0_30px_rgba(129,236,255,0.3)]">
-                    INITIALIZE_COMMS 
+                    INITIALIZE_COMMS
                     <Send className="w-4 h-4" />
                   </button>
                 </form>
               </div>
 
               <div className="grid grid-cols-2 gap-5">
-                {[
-                  { label: 'GMAIL', icon: <Mail />, color: 'primary' },
-                  { label: 'LINKEDIN', icon: <Linkedin />, color: 'secondary' },
-                  { label: 'GITHUB', icon: <Github />, color: 'primary' },
-                  { label: 'INSTAGRAM', icon: <Instagram />, color: 'secondary' }
-                ].map((social, i) => (
-                  <a 
-                    key={i}
-                    href="#" 
-                    className={`group flex flex-col p-10 bg-white/[0.03] rounded-[30px] border border-white/5 transition-all duration-500 hover:scale-105
-                      ${social.color === 'primary' ? 'hover:border-primary/40' : 'hover:border-secondary/40'}
-                    `}
-                  >
-                    <div className={`${social.color === 'primary' ? 'text-primary' : 'text-secondary'} mb-6`}>
-                      {React.cloneElement(social.icon as React.ReactElement<any>, { className: 'w-8 h-8' })}
-                    </div>
-                    <span className="font-headline text-[10px] tracking-[0.3em] font-black text-zinc-500 group-hover:text-white transition-colors">{social.label}</span>
-                  </a>
-                ))}
+
+                <div className="grid grid-cols-2 gap-5">
+                  {[
+                    {
+                      label: 'GMAIL',
+                      icon: <Mail />,
+                      color: 'primary',
+                      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=shiviam02@gmail.com',
+                    },
+                    {
+                      label: 'LINKEDIN',
+                      icon: <Linkedin />,
+                      color: 'secondary',
+                      href: 'https://www.linkedin.com/in/shivam-kumar-b086842a9/',
+                    },
+                    {
+                      label: 'GITHUB',
+                      icon: <Github />,
+                      color: 'primary',
+                      href: 'https://github.com/Pantherrbx',
+                    },
+                    {
+                      label: 'INSTAGRAM',
+                      icon: <Instagram />,
+                      color: 'secondary',
+                      href: 'https://www.instagram.com/pantherrbx/',
+                    },
+                  ].map((social, i) => (
+                    <a
+                      key={i}
+                      href={social.href}
+                      target={social.label === 'GMAIL' ? undefined : '_blank'}
+                      rel="noopener noreferrer"
+                      className={`group flex flex-col p-10 bg-white/[0.03] rounded-[30px] border border-white/5 transition-all duration-300 ${social.color === 'primary'
+                          ? 'hover:border-primary/40'
+                          : 'hover:border-secondary/40'
+                        }`}
+                    >
+                      <div
+                        className={`${social.color === 'primary' ? 'text-primary' : 'text-secondary'
+                          } mb-6`}
+                      >
+                        {React.cloneElement(
+                          social.icon as React.ReactElement<any>,
+                          { className: 'w-8 h-8' }
+                        )}
+                      </div>
+
+                      <span className="font-headline text-[10px] tracking-[0.3em] font-black text-zinc-500 group-hover:text-white transition-colors">
+                        {social.label}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+
+
+                {/* Decorative Grid Background */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#81ecff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
               </div>
             </div>
-
-            {/* Decorative Grid Background */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#81ecff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
           </div>
         </div>
       </section>
