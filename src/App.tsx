@@ -492,10 +492,16 @@ export default function App() {
                 </span>
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
               </a>
-              <button className="px-10 py-4 border border-white/10 text-on-surface font-headline font-bold rounded-xl hover:bg-white/5 transition-all flex items-center gap-3 backdrop-blur-sm">
+              
+              <a
+                href="/resume.pdf"
+                download="Shivam_Kumar_Resume.pdf"
+                className="px-10 py-4 border border-white/10 text-on-surface font-headline font-bold rounded-xl inline-flex items-center gap-3 hover:bg-white/5 transition-colors"
+              >
                 DOWNLOAD RESUME
                 <Download className="w-4 h-4" />
-              </button>
+              </a>
+
             </div>
 
             <div className="pt-16 flex gap-16 items-center opacity-40 hover:opacity-100 transition-all duration-700">
