@@ -484,7 +484,12 @@ export default function App() {
             </p>
 
             <div className="flex flex-wrap gap-5 pt-4">
-              <a href="#projects" className="group relative px-10 py-4 bg-primary text-black font-headline font-black rounded-xl overflow-hidden transition-all duration-300 shadow-[0_0_30px_rgba(129,236,255,0.4)] hover:shadow-[0_0_50px_rgba(129,236,255,0.6)]">
+              <a
+                href="https://github.com/Pantherrbx?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-10 py-4 bg-primary text-black font-headline font-bold rounded-xl overflow-hidden"
+              >
                 <span className="relative z-10 flex items-center gap-3">
                   VIEW PROJECTS
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -852,8 +857,8 @@ export default function App() {
                     target={social.label === 'GMAIL' ? '_self' : '_blank'}
                     rel={social.label === 'GMAIL' ? undefined : 'noopener noreferrer'}
                     className={`group flex min-h-[180px] w-full flex-col items-start justify-center p-10 bg-white/[0.03] rounded-[30px] border border-white/5 transition-all duration-300 ${social.color === 'primary'
-                        ? 'hover:border-primary/40'
-                        : 'hover:border-secondary/40'
+                      ? 'hover:border-primary/40'
+                      : 'hover:border-secondary/40'
                       }`}
                   >
                     <div
