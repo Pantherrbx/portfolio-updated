@@ -819,66 +819,61 @@ export default function App() {
                 </form>
               </div>
 
-              <div className="grid grid-cols-2 gap-5">
-
-                <div className="grid grid-cols-2 gap-5">
-                  {[
-                    {
-                      label: 'GMAIL',
-                      icon: <Mail />,
-                      color: 'primary',
-                      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=shiviam02@gmail.com',
-                    },
-                    {
-                      label: 'LINKEDIN',
-                      icon: <Linkedin />,
-                      color: 'secondary',
-                      href: 'https://www.linkedin.com/in/shivam-kumar-b086842a9/',
-                    },
-                    {
-                      label: 'GITHUB',
-                      icon: <Github />,
-                      color: 'primary',
-                      href: 'https://github.com/Pantherrbx',
-                    },
-                    {
-                      label: 'INSTAGRAM',
-                      icon: <Instagram />,
-                      color: 'secondary',
-                      href: 'https://www.instagram.com/pantherrbx/',
-                    },
-                  ].map((social, i) => (
-                    <a
-                      key={i}
-                      href={social.href}
-                      target={social.label === 'GMAIL' ? undefined : '_blank'}
-                      rel="noopener noreferrer"
-                      className={`group flex flex-col p-10 bg-white/[0.03] rounded-[30px] border border-white/5 transition-all duration-300 ${social.color === 'primary'
-                          ? 'hover:border-primary/40'
-                          : 'hover:border-secondary/40'
-                        }`}
+              <div className="grid w-full grid-cols-2 gap-5">
+                {[
+                  {
+                    label: 'GMAIL',
+                    icon: <Mail />,
+                    color: 'primary',
+                    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=shiviam02@gmail.com',
+                  },
+                  {
+                    label: 'LINKEDIN',
+                    icon: <Linkedin />,
+                    color: 'secondary',
+                    href: 'https://www.linkedin.com/in/shivam-kumar-b086842a9/',
+                  },
+                  {
+                    label: 'GITHUB',
+                    icon: <Github />,
+                    color: 'primary',
+                    href: 'https://github.com/Pantherrbx',
+                  },
+                  {
+                    label: 'INSTAGRAM',
+                    icon: <Instagram />,
+                    color: 'secondary',
+                    href: 'https://www.instagram.com/pantherrbx/',
+                  },
+                ].map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.href}
+                    target={social.label === 'GMAIL' ? '_self' : '_blank'}
+                    rel={social.label === 'GMAIL' ? undefined : 'noopener noreferrer'}
+                    className={`group flex min-h-[180px] w-full flex-col items-start justify-center p-10 bg-white/[0.03] rounded-[30px] border border-white/5 transition-all duration-300 ${social.color === 'primary'
+                        ? 'hover:border-primary/40'
+                        : 'hover:border-secondary/40'
+                      }`}
+                  >
+                    <div
+                      className={`${social.color === 'primary' ? 'text-primary' : 'text-secondary'
+                        } mb-6`}
                     >
-                      <div
-                        className={`${social.color === 'primary' ? 'text-primary' : 'text-secondary'
-                          } mb-6`}
-                      >
-                        {React.cloneElement(
-                          social.icon as React.ReactElement<any>,
-                          { className: 'w-8 h-8' }
-                        )}
-                      </div>
+                      {React.cloneElement(social.icon as React.ReactElement<any>, {
+                        className: 'w-8 h-8',
+                      })}
+                    </div>
 
-                      <span className="font-headline text-[10px] tracking-[0.3em] font-black text-zinc-500 group-hover:text-white transition-colors">
-                        {social.label}
-                      </span>
-                    </a>
-                  ))}
-                </div>
-
-
-                {/* Decorative Grid Background */}
-                <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#81ecff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+                    <span className="font-headline text-[10px] tracking-[0.3em] font-black text-zinc-500 group-hover:text-white transition-colors">
+                      {social.label}
+                    </span>
+                  </a>
+                ))}
               </div>
+
+              {/* Decorative Grid Background */}
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#81ecff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
             </div>
           </div>
         </div>
