@@ -327,9 +327,15 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <button className="bg-primary text-black font-headline text-[10px] font-black tracking-[0.2em] px-6 py-2.5 rounded-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(129,236,255,0.3)]">
+
+        <a
+          href="https://www.linkedin.com/in/shivam-kumar-b086842a9/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-primary text-black font-headline text-[10px] font-black tracking-[0.2em] px-6 py-2.5 rounded-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(129,236,255,0.3)]"
+        >
           GET_IN_TOUCH
-        </button>
+        </a>
       </div>
     </nav>
   );
