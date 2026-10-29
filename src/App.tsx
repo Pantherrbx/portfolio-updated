@@ -1,5 +1,5 @@
 /**
- * @license
+ * @licTECH_STACKnse
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -251,40 +251,64 @@ const PROJECTS: Project[] = [
   },
 ];
 
+
 const EXPERIENCE: Experience[] = [
   {
     epoch: 'Epoch_01',
-    year: 2021,
-    title: 'Learning Programming',
-    description: 'Initiated the synthesis process. Mastering syntactic logic through Python and C++. Deep-diving into algorithm complexity and memory management.',
-    skills: ['PYTHON', 'LOGIC'],
+    year: 2024,
+    title: 'Programming Foundations',
+    description:
+      'Built a strong foundation in Python, C++, problem-solving, data structures, and algorithmic thinking.',
+    skills: ['PYTHON', 'C++', 'DSA'],
     icon: <Terminal className="w-6 h-6" />,
   },
   {
     epoch: 'Epoch_02',
-    year: 2022,
-    title: 'Started Data Analytics',
-    description: 'Deciphering large-scale noise. Utilizing SQL, Pandas, and visualization tools to transform raw data streams into actionable intelligence protocols.',
-    skills: ['PANDAS', 'POSTGRESQL'],
+    year: 2025,
+    title: 'Data Analytics & Visualization',
+    description:
+      'Developed skills in SQL, Python, Pandas, data cleaning, exploratory data analysis, and visualization to turn raw data into useful insights.',
+    skills: ['SQL', 'PANDAS', 'DATA ANALYSIS'],
     icon: <Activity className="w-6 h-6" />,
   },
   {
     epoch: 'Epoch_03',
-    year: 2023,
-    title: 'Building AI Projects',
-    description: 'Architecting neural landscapes. Developing LLM integrations and custom transformer models. Focused on the intersection of RAG and autonomous agents.',
-    skills: ['PYTORCH', 'LLM_OPS'],
+    year: 2026,
+    title: 'IIT Kanpur — AI/ML Internship',
+    description:
+      'Worked on a Medical AI Assistant using Python, Flask, large language models, ChromaDB, and Retrieval-Augmented Generation (RAG) for healthcare question answering.',
+    skills: ['LLMs', 'RAG', 'CHROMADB', 'FLASK'],
     icon: <Brain className="w-6 h-6" />,
   },
   {
     epoch: 'Epoch_04',
+    year: 2026,
+    title: 'IIT Indore — Internship',
+    description:
+      'Gained technical and project-based learning experience under academic guidance. Add your specific project title and technologies here to highlight your work.',
+    skills: ['AI/ML', 'PROJECT WORK'],
+    icon: <Activity className="w-6 h-6" />,
+  },
+  {
+    epoch: 'Epoch_05',
+    year: 2026,
+    title: 'AI Projects & Hackathons',
+    description:
+      'Built AI/ML projects and collaborated on hackathon solutions, applying machine learning, data processing, and software development skills.',
+    skills: ['MACHINE LEARNING', 'PYTHON', 'HACKATHONS'],
+    icon: <Brain className="w-6 h-6" />,
+  },
+  {
+    epoch: 'Epoch_06',
     year: 'CURRENT',
-    title: 'Freelance / Hackathon Ready',
-    description: 'Operational deployment. Shipping production-ready code for global clients and leading engineering teams in high-stakes competitive environments.',
-    skills: ['PRODUCTION_SHIP', 'STRATEGY'],
+    title: 'Building & Shipping Projects',
+    description:
+      'Continuously improving technical skills through personal projects, collaborative development, competitive programming, and deployment.',
+    skills: ['GIT', 'DEVELOPMENT', 'PROBLEM SOLVING'],
     icon: <Settings className="w-6 h-6" />,
   },
 ];
+
 
 const SKILLS = [
   { name: 'Python', icon: <Terminal />, description: 'System tools & ML' },
@@ -526,7 +550,7 @@ export default function App() {
               <div className="w-[1px] h-10 bg-white/10" />
               <div className="flex flex-col gap-2">
                 <span className="font-headline text-[10px] tracking-widest text-zinc-500 uppercase">LOCATION</span>
-                <span className="text-xs font-black font-headline tracking-widest text-on-surface">EARTH // SECTOR_7G</span>
+                <span className="text-xs font-black font-headline tracking-widest text-on-surface">BANGALORE</span>
               </div>
             </div>
           </motion.div>
@@ -570,7 +594,7 @@ export default function App() {
                     {[
                       { l: 'STATUS', v: 'B.Tech Student' },
                       { l: 'FOCUS', v: 'Data Intelligence' },
-                      { l: 'LOCATION', v: 'Digital Horizon' }
+                      { l: 'LOCATION', v: 'BANGALORE' }
                     ].map((item, i) => (
                       <div key={i} className="space-y-2">
                         <div className="font-headline text-[10px] tracking-[0.2em] text-zinc-500 uppercase">{item.l}</div>
@@ -800,14 +824,14 @@ export default function App() {
                 <div className="space-y-6">
                   <h2 className="font-headline text-6xl font-black text-white tracking-tighter">Let's Connect</h2>
                   <p className="text-on-surface-variant text-xl font-light leading-relaxed max-w-sm">
-                    System ready for collaboration. Available for architecture consulting and high-impact AI ventures.
+                    Have a project in mind? Want to collaborate on a game? Or just want to say hello? I'd love to hear from you.
                   </p>
                 </div>
 
                 <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                   <div className="space-y-6">
                     <div className="relative group">
-                      <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-3">Identifier_Name</label>
+                      <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-3">Your Name</label>
                       <input
                         type="text"
                         placeholder="GUEST_USER"
@@ -815,7 +839,7 @@ export default function App() {
                       />
                     </div>
                     <div className="relative group">
-                      <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-3">Electronic_Mail</label>
+                      <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-3">Email Address</label>
                       <input
                         type="email"
                         placeholder="USER@DOMAIN.COM"
@@ -824,7 +848,7 @@ export default function App() {
                     </div>
                   </div>
                   <button className="w-full bg-primary text-black py-5 font-headline font-black tracking-[0.3em] text-xs hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-4 rounded-xl shadow-[0_0_30px_rgba(129,236,255,0.3)]">
-                    INITIALIZE_COMMS
+                    SEND MESSAGE
                     <Send className="w-4 h-4" />
                   </button>
                 </form>
@@ -896,7 +920,7 @@ export default function App() {
           <div className="flex items-center gap-8">
             <div className="text-primary font-headline text-xl font-black tracking-tighter">SHIVAM</div>
             <div className="h-5 w-px bg-white/10 hidden md:block" />
-            <span className="font-mono text-[9px] tracking-widest uppercase text-zinc-600">© 2024 SHIVAM // EVENT_HORIZON_OS</span>
+            <span className="font-mono text-[9px] tracking-widest uppercase text-zinc-600">© 2024 SHIVAM // Data Analyst</span>
           </div>
           <div className="flex gap-10 font-mono text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold">
             <a href="#" className="hover:text-white transition-colors">GITHUB</a>
@@ -904,7 +928,7 @@ export default function App() {
             <a href="#" className="hover:text-white transition-colors">TWITTER</a>
           </div>
           <div className="text-zinc-800 font-mono text-[9px] tracking-tighter uppercase font-bold">
-            BUILD_VER: 0.9.4-STABLE
+            Built with ❤️ and lots of coffee
           </div>
         </div>
       </footer>
