@@ -252,62 +252,73 @@ const PROJECTS: Project[] = [
 ];
 
 
+
 const EXPERIENCE: Experience[] = [
   {
     epoch: 'Epoch_01',
     year: 2024,
-    title: 'Programming Foundations',
+    title: 'Programming & Computer Science Foundations',
     description:
-      'Built a strong foundation in Python, C++, problem-solving, data structures, and algorithmic thinking.',
-    skills: ['PYTHON', 'C++', 'DSA'],
+      'Started my B.Tech journey in Computer Science Engineering (AI & Data Science) at Dayananda Sagar University. Built foundations in Python, C++, programming logic, and problem-solving.',
+    skills: ['PYTHON', 'C++', 'PROGRAMMING'],
     icon: <Terminal className="w-6 h-6" />,
   },
   {
     epoch: 'Epoch_02',
     year: 2025,
-    title: 'Data Analytics & Visualization',
+    title: 'Data Analytics & Machine Learning',
     description:
-      'Developed skills in SQL, Python, Pandas, data cleaning, exploratory data analysis, and visualization to turn raw data into useful insights.',
-    skills: ['SQL', 'PANDAS', 'DATA ANALYSIS'],
+      'Expanded my skills in Python, SQL, data analysis, Power BI, and machine learning through hands-on learning, certifications, and practical projects.',
+    skills: ['PYTHON', 'SQL', 'POWER BI', 'MACHINE LEARNING'],
     icon: <Activity className="w-6 h-6" />,
   },
   {
     epoch: 'Epoch_03',
-    year: 2026,
-    title: 'IIT Kanpur — AI/ML Internship',
+    year: 2025,
+    title: 'Data Science Intern — Oasis Infobyte',
     description:
-      'Worked on a Medical AI Assistant using Python, Flask, large language models, ChromaDB, and Retrieval-Augmented Generation (RAG) for healthcare question answering.',
-    skills: ['LLMs', 'RAG', 'CHROMADB', 'FLASK'],
+      'Completed a Data Science internship, gaining practical exposure to machine learning and data science workflows.',
+    skills: ['DATA SCIENCE', 'MACHINE LEARNING'],
     icon: <Brain className="w-6 h-6" />,
   },
   {
     epoch: 'Epoch_04',
-    year: 2026,
-    title: 'IIT Indore — Internship',
+    year: 2025,
+    title: 'Data Science Intern — Future Interns',
     description:
-      'Gained technical and project-based learning experience under academic guidance. Add your specific project title and technologies here to highlight your work.',
-    skills: ['AI/ML', 'PROJECT WORK'],
+      'Completed a two-month Data Science internship, applying data analysis and Microsoft Power BI skills in internship work.',
+    skills: ['DATA ANALYSIS', 'POWER BI'],
     icon: <Activity className="w-6 h-6" />,
   },
   {
     epoch: 'Epoch_05',
     year: 2026,
-    title: 'AI Projects & Hackathons',
+    title: 'IIT Kanpur — AI Internship',
     description:
-      'Built AI/ML projects and collaborated on hackathon solutions, applying machine learning, data processing, and software development skills.',
-    skills: ['MACHINE LEARNING', 'PYTHON', 'HACKATHONS'],
+      'Developed a Medical AI Assistant using Python, Flask, Retrieval-Augmented Generation (RAG), ChromaDB, Hugging Face embeddings, and Google Gemini 2.5 Flash. Implemented symptom-based disease prediction using Bernoulli Naive Bayes.',
+    skills: ['LLMs', 'RAG', 'CHROMADB', 'FLASK', 'GEMINI'],
     icon: <Brain className="w-6 h-6" />,
   },
   {
     epoch: 'Epoch_06',
-    year: 'CURRENT',
-    title: 'Building & Shipping Projects',
+    year: 2026,
+    title: 'IIT Indore — Research Internship',
     description:
-      'Continuously improving technical skills through personal projects, collaborative development, competitive programming, and deployment.',
-    skills: ['GIT', 'DEVELOPMENT', 'PROBLEM SOLVING'],
+      'Completed a one-month research internship under the Department of Mathematics. Worked on a Medical AI Assistant combining RAG, Bayesian Networks, and LLMs for probabilistic disease prediction.',
+    skills: ['BAYESIAN NETWORKS', 'RAG', 'LLMs', 'PYTHON'],
+    icon: <Activity className="w-6 h-6" />,
+  },
+  {
+    epoch: 'Epoch_07',
+    year: 2026,
+    title: 'AI Projects & Hackathons',
+    description:
+      'Continued building AI and data-driven applications, exploring Generative AI, machine learning, and collaborative software development through projects and hackathon participation.',
+    skills: ['GENERATIVE AI', 'MACHINE LEARNING', 'HACKATHONS'],
     icon: <Settings className="w-6 h-6" />,
   },
 ];
+
 
 
 const SKILLS = [
@@ -588,7 +599,7 @@ export default function App() {
                   </div>
                   <p className="font-sans text-xl md:text-2xl text-on-surface-variant/90 leading-relaxed font-light">
                     B.Tech Student passionate about <span className="text-white font-bold">AI, ML, SQL, Java.</span>
-                    I focus on translating complex data patterns into elegant, high-impact intelligent systems.
+                     I focus on translating complex data patterns into elegant, high-impact intelligent systems.
                   </p>
                   <div className="pt-8 grid grid-cols-2 md:grid-cols-3 gap-8">
                     {[
