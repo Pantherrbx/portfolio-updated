@@ -320,7 +320,6 @@ const EXPERIENCE: Experience[] = [
 ];
 
 
-
 const SKILLS = [
   { name: 'Python', icon: <Terminal />, description: 'System tools & ML' },
   { name: 'SQL', icon: <Database />, description: 'Data Intelligence' },
@@ -599,7 +598,7 @@ export default function App() {
                   </div>
                   <p className="font-sans text-xl md:text-2xl text-on-surface-variant/90 leading-relaxed font-light">
                     B.Tech Student passionate about <span className="text-white font-bold">AI, ML, SQL, Java.</span>
-                     I focus on translating complex data patterns into elegant, high-impact intelligent systems.
+                    I focus on translating complex data patterns into elegant, high-impact intelligent systems.
                   </p>
                   <div className="pt-8 grid grid-cols-2 md:grid-cols-3 gap-8">
                     {[
@@ -777,6 +776,7 @@ export default function App() {
             <h2 className="font-headline text-6xl md:text-8xl font-black tracking-tighter text-white mb-10">
               EVOLUTION <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">OF INTELLECT.</span>
             </h2>
+
             <p className="text-on-surface-variant text-xl max-w-2xl font-light leading-relaxed">
               A technical trajectory through language acquisition, data systems, and autonomous intelligence engineering.
             </p>
@@ -839,26 +839,67 @@ export default function App() {
                   </p>
                 </div>
 
-                <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                <form
+                  className="space-y-8"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+
+                    const form = e.currentTarget;
+                    const data = new FormData(form);
+
+                    const name = String(data.get("name") || "");
+                    const email = String(data.get("email") || "");
+                    const message = String(data.get("message") || "");
+
+                    const subject = encodeURIComponent(`Portfolio Contact - ${name}`);
+
+                    const body = encodeURIComponent(
+                      `Hello Shivam,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`
+                    );
+
+                    window.location.href =
+                      `mailto:shiviam02@gmail.com?subject=${subject}&body=${body}`;
+                  }}
+                >
                   <div className="space-y-6">
                     <div className="relative group">
                       <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-3">Your Name</label>
                       <input
                         type="text"
+                        name="name"
                         placeholder="GUEST_USER"
-                        className="w-full bg-transparent border-b border-white/10 focus:border-primary focus:ring-0 text-white placeholder-zinc-800 transition-all py-4 font-headline text-lg"
+                        required
+                        className="w-full bg-transparent border-b border-white/10 focus:border-primary focus:ring-0 text-white"
                       />
                     </div>
                     <div className="relative group">
                       <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-3">Email Address</label>
                       <input
                         type="email"
+                        name="email"
                         placeholder="USER@DOMAIN.COM"
-                        className="w-full bg-transparent border-b border-white/10 focus:border-primary focus:ring-0 text-white placeholder-zinc-800 transition-all py-4 font-headline text-lg"
+                        required
+                        className="w-full bg-transparent border-b border-white/10 focus:border-primary focus:ring-0 text-white"
+                      />
+                    </div>
+                    <div className="relative group">
+                      <label className="block text-[10px] font-headline font-black tracking-[0.3em] text-zinc-500 uppercase mb-4">
+                        YOUR MESSAGE
+                      </label>
+
+                      <textarea
+                        name="message"
+                        placeholder="TELL ME ABOUT YOUR PROJECT..."
+                        required
+                        rows={3}
+                        className="w-full bg-transparent border-b border-white/10 focus:border-primary focus:ring-0 text-white py-3 resize-none"
                       />
                     </div>
                   </div>
-                  <button className="w-full bg-primary text-black py-5 font-headline font-black tracking-[0.3em] text-xs hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-4 rounded-xl shadow-[0_0_30px_rgba(129,236,255,0.3)]">
+                  <button
+                    type="submit"
+                    className="w-full bg-primary text-black py-5 font-headline font-black tracking-[0.3em] text-xs"
+                  >
                     SEND MESSAGE
                     <Send className="w-4 h-4" />
                   </button>
