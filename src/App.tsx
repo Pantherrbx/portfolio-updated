@@ -975,9 +975,34 @@ export default function App() {
             <span className="font-mono text-[9px] tracking-widest uppercase text-zinc-600">© 2024 SHIVAM // Data Analyst</span>
           </div>
           <div className="flex gap-10 font-mono text-[10px] tracking-[0.2em] uppercase text-zinc-500 font-bold">
-            <a href="#" className="hover:text-white transition-colors">GITHUB</a>
-            <a href="#" className="hover:text-white transition-colors">LINKEDIN</a>
-            <a href="#" className="hover:text-white transition-colors">TWITTER</a>
+
+            <a
+              href="https://github.com/Pantherrbx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              GITHUB
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/shivam-kumar-b086842a9/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              LINKEDIN
+            </a>
+
+            <a
+              href="https://x.com/sh1vam02"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              TWITTER
+            </a>
+
           </div>
           <div className="text-zinc-800 font-mono text-[9px] tracking-tighter uppercase font-bold">
             Built with ❤️ and lots of coffee
