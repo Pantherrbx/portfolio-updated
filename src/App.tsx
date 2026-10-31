@@ -420,53 +420,46 @@ const GalaxyBackground = () => {
   );
 };
 
+
+
 const DiagnosticsCard = () => {
   return (
     <motion.div
-      initial={{ rotate: 3, opacity: 0, y: 20 }}
-      whileInView={{ rotate: 1, opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="glass-panel rounded-xl border border-white/10 p-8 flex flex-col justify-between h-[500px]"
+      initial={{ opacity: 0, scale: 0.9, x: 40 }}
+      animate={{ opacity: 1, scale: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="relative w-full max-w-[620px] aspect-square flex items-center justify-center"
     >
-      <div className="flex justify-between items-start">
-        <div className="space-y-1">
-          <div className="w-12 h-1 bg-primary" />
-          <span className="font-headline text-[10px] text-primary/60 tracking-widest uppercase">SYSTEM_DIAGNOSTICS</span>
+      {/* Animated portrait orbits */}
+      <div className="portrait-orbit-container">
+        <div className="portrait-orbit portrait-orbit-1">
+          <span className="portrait-orbit-dot" />
         </div>
-        <Cpu className="text-primary w-10 h-10" />
-      </div>
 
-      <div className="space-y-4">
-        <div className="h-40 bg-white/5 rounded-lg flex items-end px-4 gap-2 py-4">
-          {[60, 80, 40, 90, 55, 70].map((h, i) => (
-            <motion.div
-              key={i}
-              initial={{ height: 0 }}
-              whileInView={{ height: `${h}%` }}
-              transition={{ delay: i * 0.1, duration: 1 }}
-              className="bg-primary/40 w-full hover:bg-primary transition-colors"
-            />
-          ))}
+        <div className="portrait-orbit portrait-orbit-2">
+          <span className="portrait-orbit-dot" />
         </div>
-        <div className="flex justify-between font-mono text-[10px] text-zinc-500 uppercase">
-          <span>DATA_FEED_01</span>
-          <span className="text-primary">98.2% EFFICIENCY</span>
+
+        <div className="portrait-orbit portrait-orbit-3">
+          <span className="portrait-orbit-dot" />
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white/5 p-4 rounded border border-white/5 hover:border-primary/20 transition-all">
-          <span className="font-headline text-[9px] text-zinc-500 block mb-1 uppercase tracking-tighter">LATENCY</span>
-          <span className="font-headline text-2xl text-on-surface">14ms</span>
-        </div>
-        <div className="bg-white/5 p-4 rounded border border-white/5 hover:border-primary/20 transition-all">
-          <span className="font-headline text-[9px] text-zinc-500 block mb-1 uppercase tracking-tighter">UPTIME</span>
-          <span className="font-headline text-2xl text-on-surface">99.9%</span>
+      {/* Glowing portrait border */}
+      <div className="portrait-glow">
+        <div className="portrait-circle">
+          <img
+            src="/images/shivam.png"
+            alt="Shivam Kumar"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </motion.div>
   );
 };
+
+
 
 export default function App() {
   const [activeWordIndex, setActiveWordIndex] = useState(0);

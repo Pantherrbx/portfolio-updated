@@ -1,6 +1,9 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @import "tailwindcss";
 
+/* THEME */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-headline: "Space Grotesk", sans-serif;
@@ -22,12 +25,14 @@
   --color-outline-variant: #484848;
 }
 
+/* BASE */
 @layer base {
   body {
     @apply bg-surface text-on-surface font-sans;
   }
 }
 
+/* GENERAL EFFECTS */
 .glass-panel {
   @apply backdrop-blur-xl bg-surface-container-highest/40;
 }
@@ -41,8 +46,12 @@
 }
 
 @keyframes subtle-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.7; }
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .animate-subtle-pulse {
@@ -53,3 +62,247 @@
   @apply bg-primary/30 text-on-surface;
 }
 
+/* PORTRAIT ORBIT CONTAINER */
+.orbit-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* THREE ORBITAL PATHS */
+.orbit-track {
+  position: absolute;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbit-rotate 12s linear infinite;
+}
+
+.orbit-track.orbit-one {
+  width: 86%;
+  height: 86%;
+}
+
+.orbit-track.orbit-two {
+  width: 94%;
+  height: 94%;
+  animation-duration: 16s;
+  animation-direction: reverse;
+}
+
+.orbit-track.orbit-three {
+  width: 102%;
+  height: 102%;
+  animation-duration: 20s;
+}
+
+/* GLOWING ORBIT DOTS */
+.orbit-dot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow:
+    0 0 10px #22d3ee,
+    0 0 22px #22d3ee;
+  transform: translate(-50%, -50%);
+}
+
+/* ORBIT ROTATION */
+@keyframes orbit-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* PORTRAIT FRAME */
+.portrait-glow {
+  position: relative;
+  z-index: 2;
+  width: 76%;
+  aspect-ratio: 1 / 1;
+  padding: 4px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow:
+    0 0 15px rgba(34, 211, 238, 0.8),
+    0 0 45px rgba(34, 211, 238, 0.35);
+}
+
+.portrait-circle {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #080d14;
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-track,
+  .animate-subtle-pulse {
+    animation: none;
+  }
+}
+/* ===== PORTRAIT ORBIT ANIMATION ===== */
+
+.orbit-container {
+  position: absolute;
+  inset: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orbit-track {
+  position: absolute;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 50%;
+  transform-origin: center;
+  animation-name: portrait-orbit-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+/* Three orbit sizes and speeds */
+.orbit-track.orbit-one {
+  width: 94%;
+  height: 94%;
+  animation-duration: 8s;
+}
+
+.orbit-track.orbit-two {
+  width: 104%;
+  height: 104%;
+  animation-duration: 12s;
+  animation-direction: reverse;
+}
+
+.orbit-track.orbit-three {
+  width: 114%;
+  height: 114%;
+  animation-duration: 16s;
+}
+
+/* Moving cyan dots */
+.orbit-dot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow:
+    0 0 10px #22d3ee,
+    0 0 22px #22d3ee,
+    0 0 35px rgba(34, 211, 238, 0.7);
+  transform: translate(-50%, -50%);
+}
+
+/* Rotation */
+@keyframes portrait-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Keep portrait above orbit paths */
+.portrait-glow {
+  position: relative;
+  z-index: 2;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-track {
+    animation: none;
+  }
+}
+/* ===== PORTRAIT ORBIT ANIMATION - FINAL ===== */
+
+.portrait-orbit-container {
+  position: absolute;
+  inset: -3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.portrait-orbit {
+  position: absolute;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 50%;
+  transform-origin: center;
+  animation-name: portraitOrbitMotion !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
+  will-change: transform;
+}
+
+.portrait-orbit-1 {
+  width: 94%;
+  height: 94%;
+  animation-duration: 8s !important;
+}
+
+.portrait-orbit-2 {
+  width: 104%;
+  height: 104%;
+  animation-duration: 11s !important;
+  animation-direction: reverse !important;
+}
+
+.portrait-orbit-3 {
+  width: 114%;
+  height: 114%;
+  animation-duration: 15s !important;
+}
+
+.portrait-orbit-dot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow:
+    0 0 10px #22d3ee,
+    0 0 22px #22d3ee,
+    0 0 35px rgba(34, 211, 238, 0.8);
+  transform: translate(-50%, -50%);
+}
+
+@keyframes portraitOrbitMotion {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.portrait-glow {
+  position: relative;
+  z-index: 2;
+}
