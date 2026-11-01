@@ -451,7 +451,10 @@ const DiagnosticsCard = () => {
           <img
             src="/images/shivam.png"
             alt="Shivam Kumar"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
       </div>
@@ -997,9 +1000,9 @@ export default function App() {
             </a>
 
           </div>
-          <div className="text-zinc-800 font-mono text-[9px] tracking-tighter uppercase font-bold">
-            Built with ❤️ and lots of coffee
-          </div>
+          <p className="footer-credit">
+            BUILT WITH ❤️ AND LOTS OF COFFEE
+          </p>
         </div>
       </footer>
     </div>
