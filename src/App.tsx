@@ -319,6 +319,32 @@ const EXPERIENCE: Experience[] = [
   },
 ];
 
+const CERTIFICATIONS = [
+  {
+    title: "Fabric Data Engineer Associate",
+    fullTitle: "Microsoft Certified: Fabric Data Engineer Associate",
+    issuer: "Microsoft",
+    year: "2026",
+    logo: "/images/certifications/microsoft-fabric-badge.png",
+    link: "https://learn.microsoft.com/en-us/users/shivamkumar-9750/credentials/e124e9827489b6ee",
+  },
+  {
+    title: "Azure Data Fundamentals",
+    fullTitle: "Microsoft Certified: Azure Data Fundamentals",
+    issuer: "Microsoft",
+    year: "2026",
+    logo: "/images/certifications/microsoft-azure-badge.png",
+    link: "https://learn.microsoft.com/en-us/users/shivamkumar-9750/credentials/668da06880dc096e",
+  },
+  {
+    title: "Generative AI Professional",
+    fullTitle: "Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",
+    issuer: "Oracle",
+    year: "2025",
+    logo: "/images/certifications/oracle-generative-ai-badge.png",
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=205F95B6B68DA5C5A23ACE5177AE3B99A1AE20939AF9CE5373DD9B84B555515F",
+  },
+];
 
 const SKILLS = [
   { name: 'Python', icon: <Terminal />, description: 'System tools & ML' },
@@ -343,7 +369,7 @@ const Navbar = () => {
           SHIVAM_LABS
         </div>
         <div className="hidden md:flex items-center gap-10 font-headline text-xs font-bold tracking-widest uppercase">
-          {['home', 'projects', 'skills', 'experience'].map((item) => (
+          {['home', 'projects', 'skills', 'experience', 'certifications'].map((item) => (
             <a
               key={item}
               href={`#${item}`}
@@ -821,7 +847,101 @@ export default function App() {
           </div>
         </div>
       </section>
+      {/* Certifications Section */}
+      <section
+        id="certifications"
+        className="py-32 px-6 md:px-12 bg-surface-container-lowest"
+      >
+        <div className="max-w-7xl mx-auto">
 
+          <div className="mb-20">
+            <span className="font-headline text-primary tracking-[0.4em] uppercase text-[10px] font-black mb-6 block">
+              KNOWLEDGE_BASE // VERIFIED
+            </span>
+
+            <h2 className="font-headline text-6xl md:text-8xl font-black tracking-tighter text-white">
+              CERTIFICATIONS<span className="text-primary">.</span>
+            </h2>
+
+            <p className="text-on-surface-variant text-xl mt-6 max-w-2xl font-light">
+              Professional learning, technical achievements, and continuous growth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+            {CERTIFICATIONS.map((cert, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group p-8 min-h-[300px] flex flex-col justify-between rounded-2xl bg-white/[0.03] border border-white/10 hover:border-primary/50 hover:shadow-[0_0_35px_rgba(129,236,255,0.1)] transition-all duration-500"
+              >
+                <div>
+                  <div className="flex justify-between items-center mb-10">
+                    <span className="text-primary font-headline text-xs tracking-widest">
+                      CERT_0{i + 1}
+                    </span>
+
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Verify ${cert.fullTitle}`}
+                    >
+                      <ExternalLink className="w-5 h-5 text-primary group-hover:rotate-45 transition-transform" />
+                    </a>
+                  </div>
+
+                  <h3 className="text-white text-2xl font-bold mb-3">
+                    {cert.title}
+                  </h3>
+
+                  <p className="text-zinc-400 text-sm">
+                    {cert.issuer}
+                  </p>
+                </div>
+
+                {/* Small certification badge inside card */}
+                <div className="flex items-center justify-between mt-6">
+                  <div>
+                    <span className="text-zinc-500 font-mono text-xs">
+                      {cert.year}
+                    </span>
+
+                    <p className="text-zinc-400 text-xs mt-2 max-w-[220px]">
+                      {cert.fullTitle}
+                    </p>
+                  </div>
+
+                  <img
+                    src={cert.logo}
+                    alt={`${cert.issuer} certification badge`}
+                    className="w-16 h-16 object-contain shrink-0"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="flex justify-end items-center mt-5 pt-5 border-t border-white/10">
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary text-[10px] font-black tracking-widest hover:text-white transition-colors"
+                  >
+                    VERIFY CREDENTIAL ↗
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+
+
+          </div>
+        </div>
+      </section>
       {/* Contact Section */}
       <section id="contact" className="py-32 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
